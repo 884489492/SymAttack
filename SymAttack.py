@@ -80,7 +80,7 @@ def sym_attack(point_cloud, classifier, label, symElm, symPlane, max_iter=100, e
 def mirror_vector(vector, symPlane):    # 镜像向量
     a, b, c, d = symPlane
     normal = torch.tensor([a, b, c], dtype=torch.float32)
-    normal = normal / torch.norm(normal)    # 这步骤有什么意义
+    normal = normal / torch.norm(normal)    
     dot_product = torch.dot(vector, normal)
     mirrored_vector = vector - 2 * dot_product * normal
     return mirrored_vector
